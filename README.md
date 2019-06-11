@@ -16,5 +16,8 @@ These are some usefull tidbits when using GUIs.
 ### Dynamic GUI IDs <a name="dynamicguiid"></a>
 Due to how the guiHelper is scripted the best way to add a new guiID is this:
 ```lua
-guiHelper.ID["TEXTNAME"] = tableHelper.getCount(guiHelper.ID) + 1
+local GUIID = "name"
+if not guiHelper.ID[GUIID] then
+    guiHelper.ID[GUIID] = tableHelper.getCount(guiHelper.ID) + 1
+end
 ```
